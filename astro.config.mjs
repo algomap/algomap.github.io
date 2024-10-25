@@ -4,9 +4,11 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://algomap.github.io',
 	integrations: [
 		starlight({
 			title: 'AlgoMap',
+
 			social: {
 				github: 'https://github.com/withastro/starlight',
 			},
