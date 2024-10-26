@@ -23,7 +23,7 @@ array = [1, 2, 3, 4, 5]
 elemento = array[2]  # Accesso con indice 2 (3° elemento)
 ```
 
-- Nella maggior parte dei linguaggi di programmazione si utilizza l'[indicizzazione con base 0](https://en.wikipedia.org/wiki/Zero-based_numbering).
+- Nella maggior parte dei linguaggi di programmazione si utilizza l'<a href="https://en.wikipedia.org/wiki/Zero-based_numbering" target="_blank">indicizzazione con base 0</a>.
 
 ## Inserimento
 
