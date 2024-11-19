@@ -25,10 +25,6 @@ def pushback(self, n):
    self.length += 1
 ```
 
-![da](/imgs/dynamic-array.png)
-
-TODO inserire immagine?
-
 Poiché l'array è dinamico, l'aggiunta di un altro elemento quando si esaurisce la capacità si ottiene copiando i valori in un nuovo array di dimensioni doppie rispetto a quelle originarie. La seguente immagine e il seguente pseudocodice lo dimostrano.
 
 ```python
@@ -43,19 +39,11 @@ def resize(self):
    self.arr = newArr
 ```
 
-![da1](/imgs/dynamic-array-1.png)
-
-TODO inserire immagine?
-
 > Quando tutti gli elementi del primo array sono stati copiati, non ha senso mantenerli in memoria: questo spazio sarà deallocato.
 
 Questa operazione verrà eseguita in $O(1)$ **ammortizzato**. La complessità temporale ammortizzata è il tempo medio impiegato per ogni operazione, che una volta eseguita non si ripeterà per un periodo di tempo così lungo che il costo diventa "ammortizzato". Questo ha senso perché non sempre l'array deve essere ridimensionato, nel qual caso eseguiremmo operazioni da $O(n)$.
 
 Approfondiamo un po' il motivo per cui raddoppiamo la dimensione dell'array iniziale quando finisce lo spazio. È possibile dimostrarlo matematicamente, per cui ne forniamo una panoramica di alto livello. Non preoccupatevi, non useremo equazioni fantasiose. La figura sottostante mostra un array risultante di dimensione 8. Immaginiamo ora di volerlo riempire dinamicamente e di partire da un array di dimensione 1. Aggiungeremo 5, raddoppiando lo spazio. Aggiungeremmo 5, raddoppieremmo lo spazio per aggiungere 6, raddoppieremmo lo spazio per aggiungere 7 e 8, raddoppieremmo lo spazio per aggiungere 9, 10, 11 e 12.
-
-![da2](/imgs/dynamic-array-2.png)
-
-TODO inserire immagine?
 
 La dimensione dell'array di cui sopra è passata da `1 -> 2 -> 4 -> 8.`.
 Questo ha senso perché per creare l'array risultante osservato nella visualizzazione, abbiamo dovuto creare 4 spazi e poi inserire 4 elementi, per un totale di 8 operazioni. Inoltre, dobbiamo considerare anche la somma di tutte le operazioni che si sono verificate prima dell'ultima, poiché senza queste operazioni non saremmo arrivati all'array risultante.
