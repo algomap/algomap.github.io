@@ -4,8 +4,6 @@ sidebar:
   order: 3
 ---
 
-## Stack
-
 Uno **stack** (o pila) è una struttura di dati che contiene una collezione di elementi in cui è possibile aggiungere e rimuovere elementi da un'unica estremità, chiamata cima o "top" dello stack. Un esempio fisico di uno stack è una pila di piatti in un buffet: si può prendere o aggiungere un piatto solo dalla cima della pila. Allo stesso modo, uno stack nel mondo del software consente operazioni di aggiunta e rimozione solo dalla cima.
 
 Gli stack sono strutture di dati dinamiche che seguono il principio **LIFO** (*Last In First Out*), ovvero l'ultimo elemento inserito è il primo a essere rimosso. Le operazioni principali che uno stack supporta sono `push`, `pop` e `peek`.
