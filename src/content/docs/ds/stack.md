@@ -14,7 +14,7 @@ def push(self, n):
    self.stack.append(n)
 ```
 
-![stack](/src/assets/stack-1.png)
+![stack](../../../assets/stack-0.png)
 
 Uno stack, come struttura di dati, è semplicemente un'**interfaccia astratta**, e non importa come viene implementato (solitamente array dinamici): le caratteristiche principali sono che si devono poter aggiungere e rimuovere elementi dalla stessa estremità.
 
@@ -29,7 +29,7 @@ def pop(self):
    return self.stack.pop()
 ```
 
-![stack-2](/src/assets/stack-1.png)
+![stack-1](../../../assets/stack-1.png)
 
 > Nella maggior parte dei linguaggi, prima di eseguire l'operazione di `pop`, è una buona pratica verificare se lo stack è vuoto per evitare errori.
 
