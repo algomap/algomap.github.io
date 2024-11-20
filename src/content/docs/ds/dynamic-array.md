@@ -4,15 +4,17 @@ sidebar:
   order: 2
 ---
 
-Gli **array dinamici** sono molto più comuni e utili grazie alla loro capacità di essere ridimensionati.
+Gli **array dinamici** sono molto più comuni e utili grazie alla loro capacità di essere **ridimensionati** (*resize*).
 
-- In linguaggio come JavaScript o Python questi sono l'implementazione di default, poiché non sono linguaggi <a href="https://it.wikipedia.org/wiki/Tipizzazione_statica" target="_blank">staticamente tipati</a>.
+> In linguaggio come JavaScript o Python questi sono l'implementazione di default, poiché non sono linguaggi <a href="https://it.wikipedia.org/wiki/Tipizzazione_statica" target="_blank">staticamente tipati</a>.
 
-> La differenza tra [array statici](/ds/static-array) e dinamici è che in quest'ultimi non è necessario specificare una dimensionalità al momento dell'inizializzazione.
+La differenza tra [**array statici**](/ds/static-array) e **dinamici** è che in quest'ultimi non è necessario specificare una dimensionalità al momento dell'inizializzazione.
 
-Quando si inserisce un nuovo elemento in un array dinamico, il sistema operativo trova il prossimo spazio vuoto in **memoria RAM** e vi inserisce l'elemento.
+Quando si inserisce un nuovo elemento in un array dinamico, il sistema operativo trova il prossimo spazio vuoto in <a href="https://en.wikipedia.org/wiki/Random-access_memory" target="_blank">**memoria RAM**</a> e vi inserisce l'elemento.
 
-Per fare un esempio, prendiamo un array di dimensione 3 e inseriamo elementi in esso fino a esaurimento dello spazio. Lo pseudocodice e la visualizzazione che segue lo dimostrano.
+## Resize
+
+Per fare un esempio, prendiamo un array che ha una **capacità** pari a $3$ elementi, e aggiungiamo valori in esso fino a esaurimento dello spazio.
 
 ```python
 # Inserisci n come ultima posizione dell'array
@@ -25,7 +27,7 @@ def pushback(self, n):
    self.length += 1
 ```
 
-Poiché l'array è dinamico, l'aggiunta di un altro elemento quando si esaurisce la capacità si ottiene copiando i valori in un nuovo array di dimensioni doppie rispetto a quelle originarie. La seguente immagine e il seguente pseudocodice lo dimostrano.
+Poiché l'array è dinamico, l'aggiunta di un elemento a capacità esaurita avvia una funzione che copia i valori correnti in un nuovo array con capacità raddoppiata.
 
 ```python
 def resize(self):
@@ -39,7 +41,7 @@ def resize(self):
    self.arr = newArr
 ```
 
-> Quando tutti gli elementi del primo array sono stati copiati, non ha senso mantenerli in memoria: questo spazio sarà deallocato.
+Una volta che tutti gli elementi dell'array originale saranno copiati, non avrà senso mantenerli in memoria: **il loro spazio sarà deallocato**.
 
 Questa operazione verrà eseguita in $O(1)$ **ammortizzato**. La complessità temporale ammortizzata è il tempo medio impiegato per ogni operazione, che una volta eseguita non si ripeterà per un periodo di tempo così lungo che il costo diventa "ammortizzato". Questo ha senso perché non sempre l'array deve essere ridimensionato, nel qual caso eseguiremmo operazioni da $O(n)$.
 

@@ -52,9 +52,9 @@ posizione = 2
 array = array[:posizione] + array[posizione + 1:]
 ```
 
-## Complessità
+## Analisi asintotica di complessità
 
-### Complessità in tempo
+### Complessità temporale
 
 Gli array statici sono una struttura di dati semplice ed efficiente per molte operazioni di accesso diretto, ma possono risultare meno efficienti per operazioni di inserimento e cancellazione a causa della necessità di spostare elementi.
 
@@ -67,7 +67,7 @@ La ricerca può essere ottimizzata se l'array è ordinato, utilizzando la [**ric
 | Cancellazione | $O(n)$      | Cancellazione in qualsiasi posizione richiede lo spostamento degli elementi successivi|
 | Ricerca       | $O(n)$      | Ricerca lineare *oppure* $O(\log n)$ se l'array è ordinato e si utilizza la ricerca binaria   |
 
-### Complessità in spazio
+### Complessità spaziale
 
 Lo spazio in termini di memoria occupata è direttamente proporzionato al numero di celle allocate durante la creazione dell'array.
 

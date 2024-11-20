@@ -16,7 +16,7 @@ export default defineConfig({
 			title: 'AlgoMap',
 			customCss: ['./src/mathjax.css'],
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/algomap/algomap.github.io',
 			},
 			sidebar: [
 				{

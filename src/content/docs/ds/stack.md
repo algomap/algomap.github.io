@@ -50,7 +50,9 @@ def peek(self):
    return self.stack[-1]
 ```
 
-## Complessità Temporale
+## Analisi asintotica di complessità
+
+### Complessità Temporale
 
 | Operation | Big-O Time | Notes                                |
 | --------- | ---------- | ------------------------------------ |
@@ -58,6 +60,6 @@ def peek(self):
 | Pop       | $O(1)*$    | Controlla se lo stack è vuoto prima. |
 | Peek/Top  | $O(1)*$    | Recupera senza rimuovere.            |
 
-## Complessità Spaziale
+### Complessità Spaziale
 
 La **complessità spaziale** è pari al numero di elementi *pushati* che sono mantenuti nello stack, quindi è $O(n)$.
