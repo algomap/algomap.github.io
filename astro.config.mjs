@@ -24,8 +24,8 @@ export default defineConfig({
 					autogenerate: { directory: 'ds' },
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Algoritmi',
+					autogenerate: { directory: 'algorithms' },
 				},
 			],
 		}),
