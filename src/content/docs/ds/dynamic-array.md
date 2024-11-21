@@ -41,14 +41,21 @@ def resize(self):
    self.arr = newArr
 ```
 
-Una volta che tutti gli elementi dell'array originale saranno copiati, non avrà senso mantenerli in memoria: **il loro spazio sarà deallocato**.
+### Perchè si raddoppia la dimensione?
 
-Approfondiamo un po' il motivo per cui raddoppiamo la dimensione dell'array iniziale quando finisce lo spazio. È possibile dimostrarlo matematicamente, per cui ne forniamo una panoramica di alto livello. Non preoccupatevi, non useremo equazioni fantasiose. La figura sottostante mostra un array risultante di dimensione 8. Immaginiamo ora di volerlo riempire dinamicamente e di partire da un array di dimensione 1. Aggiungeremo 5, raddoppiando lo spazio. Aggiungeremmo 5, raddoppieremmo lo spazio per aggiungere 6, raddoppieremmo lo spazio per aggiungere 7 e 8, raddoppieremmo lo spazio per aggiungere 9, 10, 11 e 12.
+Nell'operazione di resize di un array dinamico, si sceglie di raddoppiare la dimensione dell'array piuttosto che incrementarla di un numero fisso per ottimizzare l'efficienza sia in termini di complessità temporale che spaziale.
 
-La dimensione dell'array di cui sopra è passata da `1 -> 2 -> 4 -> 8.`.
-Questo ha senso perché per creare l'array risultante osservato nella visualizzazione, abbiamo dovuto creare 4 spazi e poi inserire 4 elementi, per un totale di 8 operazioni. Inoltre, dobbiamo considerare anche la somma di tutte le operazioni che si sono verificate prima dell'ultima, poiché senza queste operazioni non saremmo arrivati all'array risultante.
+1. **Efficienza ammortizzata**:
+   Raddoppiando, il costo medio di inserimento resta $O(1)$, mentre incrementi fissi porterebbero a un costo medio $O(n)$ per i frequenti resizes.
 
-Lo schema è che l'ultimo termine (il termine dominante) è sempre maggiore o uguale alla somma di tutti i termini che lo precedono. In questo caso, 1+2+4=7, e 7<8. Sommando l'8 al 7, si ottiene un totale di 15 operazioni per creare la matrice risultante di dimensione 1. In generale, la formula è che per qualsiasi array di dimensione $n$, ci vorranno al massimo $2n$ operazioni per crearlo, il che appartiene a $O(n)$.
+2. **Meno resizes**:
+   Con il raddoppio, il numero di resizes è $O(\log n)$. Usando incrementi fissi, avremmo $O(n)$.
+
+3. **Memoria efficiente**:
+   Allocazioni esponenziali sfruttano meglio i moderni sistemi di memoria rispetto a incrementi piccoli.
+
+4. **Trade-off spazio/tempo**:
+   Il raddoppio bilancia bene memoria inutilizzata (massimo $50\%$) e prestazioni.
 
 ## Popback
 
@@ -80,7 +87,7 @@ def insert(self, i, n):
    # Qui lanceremmo un'eccezione di fuori limite
 ```
 
-## Complessità
+## Analisi asintotica di complessità
 
 ### Complessità Temporale
 
